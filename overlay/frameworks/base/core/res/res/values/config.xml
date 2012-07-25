@@ -46,7 +46,7 @@
 
     <bool translatable="false" name="config_wifi_p2p_support">true</bool>
 
-    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+    <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
 
     <bool name="config_wifi_background_scan_support">true</bool>
 
@@ -133,7 +133,7 @@
     </integer-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">4</integer>
+    <integer name="config_screenBrightnessDim">10</integer>
 
     <bool name="config_voice_capable">false</bool>
 
@@ -141,9 +141,9 @@
 
     <integer name="config_downloadDataDirSize">200</integer>
 
-    <string name="config_networkLocationProvider">com.google.android.location.NetworkLocationProvider</string>
+    <string name="config_networkLocationProviderPackageName">com.google.android.location</string> 
 
-    <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
+    <string name="config_geocodeProviderPackageName">com.google.android.location</string>
 
     <integer name="config_lidOpenRotation">0</integer>
 
