@@ -23,18 +23,14 @@ DEVICE_PACKAGE_OVERLAYS += device/asus/tf300t/overlay
 
 # Files needed for boot image
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/init.cardhu.rc:root/init.cardhu.rc\
+    $(LOCAL_PATH)/ramdisk/init.cardhu.rc:root/init.cardhu.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.cardhu.rc:root/ueventd.cardhu.rc \
     $(LOCAL_PATH)/ramdisk/init.cardhu.usb.rc:root/init.cardhu.usb.rc \
-    $(LOCAL_PATH)/ramdisk/init.cardhu.keyboard.rc:root/init.cardhu.keyboard.rc \
-    $(LOCAL_PATH)/ramdisk/init.cardhu.cpu.rc:root/init.cardhu.cpu.rc \
-    $(LOCAL_PATH)/prebuilt/keyswap::root/sbin/keyswap \
+    $(LOCAL_PATH)/ramdisk/init.cardhu.cpu.rc:root/init.cardhu.cpu.rc
 
 # Prebuilt configeration files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/asound.conf:system/etc/asound.conf \
     $(LOCAL_PATH)/prebuilt/cpu.sh:system/bin/cpu.sh \
-    $(LOCAL_PATH)/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/prebuilt/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/prebuilt/gpsconfig.xml:system/etc/gps/gpsconfig.xml
 
@@ -43,38 +39,36 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc \
     $(LOCAL_PATH)/idc/elan-touchscreen.idc:system/usr/idc/elan-touchscreen.idc \
     $(LOCAL_PATH)/idc/panjit_touch.idc:system/usr/idc/panjit_touch.idc \
-    $(LOCAL_PATH)/keychars/asusdec.kcm:system/usr/keychars/asusdec.kcm \
-    $(LOCAL_PATH)/keylayout/asusdec.kl:system/usr/keylayout/asusdec.kl \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/keylayout/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl
-
-# Localized input keychars and keylayout files
-$(call inherit-product, $(LOCAL_PATH)/keychars/l10n/l10n.mk)
-$(call inherit-product, $(LOCAL_PATH)/keylayout/l10n/l10n.mk)
+    $(LOCAL_PATH)/prebuilt/asusdec.kcm:system/usr/keychars/asusdec.kcm \
+    $(LOCAL_PATH)/prebuilt/asusdec.kl:system/usr/keylayout/asusdec.kl \
+    $(LOCAL_PATH)/prebuilt/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/prebuilt/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl
 
 # Camera/WiFi/BT Firmware
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/nvram.txt:system/etc/nvram_4329.txt \
     $(LOCAL_PATH)/prebuilt/firmware/BCM4329B1_002.002.023.0797.0863.hcd:system/etc/firmware/BCM4329B1_002.002.023.0797.0863.hcd \
-    $(LOCAL_PATH)/prebuilt/firmware/TF201-RS_M6Mo.bin:system/etc/firmware/camera/TF300T-RS_M6Mo.bin \
+    $(LOCAL_PATH)/prebuilt/firmware/fw_bcmdhd.bin:system/vendor/firmware/fw_bcmdhd.bin \
+    $(LOCAL_PATH)/prebuilt/firmware/fw_bcmdhd_apsta.bin:system/vendor/firmware/fw_bcmdhd_apsta.bin \
+    $(LOCAL_PATH)/prebuilt/firmware/fw_bcmdhd_p2p.bin:system/vendor/firmware/fw_bcmdhd_p2p.bin
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
     $(LOCAL_PATH)/asusdec/com.cyanogenmod.asusdec.xml:system/etc/permissions/com.cyanogenmod.asusdec.xml
 
@@ -93,8 +87,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaudioutils \
     libinvensense_mpl \
-    blobpack_tfp \
     AutoParts_tfp \
+    blobpack_tfp \
     mischelp \
     com.cyanogenmod.asusdec \
     libasusdec_jni
@@ -115,16 +109,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.epad.model=TF300T \
     ro.product.model=TF300T
 
+# media files
+PRODUCT_COPY_FILES += \
+    device/asus/tf300t/media_codecs.xml:system/etc/media_codecs.xml \
+    device/asus/tf300t/media_profiles.xml:system/etc/media_profiles.xml
+
 # Inherit tablet dalvik settings
-$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 
 # Call the vendor to setup propiatory files
-$(call inherit-product-if-exists, vendor/asus/tf201/tf201-vendor.mk)
+$(call inherit-product-if-exists, vendor/asus/tf300t/tf300t-vendor.mk)
 
-# Copy bcm4329 firmware
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
-
-# Device nameing
+# Device naming
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_tf300t
 PRODUCT_DEVICE := tf300t
