@@ -18,13 +18,12 @@ package com.cyanogenmod.asusdec;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.os.IBinder;
@@ -43,17 +42,15 @@ import com.android.internal.os.DeviceKeyHandler;
 public final class KeyHandler implements DeviceKeyHandler {
     private static final String TAG = "AsusdecKeyHandler";
 
-    private static final int MINIMUM_BACKLIGHT = android.os.Power.BRIGHTNESS_OFF + 1;
-    private static final int MAXIMUM_BACKLIGHT = android.os.Power.BRIGHTNESS_ON;
-    private static final String PREFS_FILE = "device_settings";
-    private static final String PREFS_TOUCHPAD_STATUS = "touchpad_status";
+    private static final int MINIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_OFF + 1;
+    private static final int MAXIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_ON;
+    private static final String SETTING_TOUCHPAD_STATUS = "touchpad_status";
 
     private final Context mContext;
     private final Handler mHandler;
     private final Intent mSettingsIntent;
     private final boolean mAutomaticAvailable;
-    private boolean mTouchpadEnabled;
-    private Context mDeviceSettingsContext = null;
+    private boolean mTouchpadEnabled = true;
     private WifiManager mWifiManager;
     private BluetoothAdapter mBluetoothAdapter;
     private IPowerManager mPowerManager;
@@ -75,15 +72,30 @@ public final class KeyHandler implements DeviceKeyHandler {
                 com.android.internal.R.bool.config_automatic_brightness_available);
 
         try {
-            mDeviceSettingsContext = context.createPackageContext(
-                    "com.cyanogenmod.settings.device", 0);
-            SharedPreferences prefs = mDeviceSettingsContext.getSharedPreferences(
-                    PREFS_FILE, Context.MODE_WORLD_READABLE);
-            mTouchpadEnabled = prefs.getBoolean(PREFS_TOUCHPAD_STATUS, true);
-        } catch (NameNotFoundException e) {
-            Slog.e(TAG, "Could not find device com.cyanogenmod.settings.device", e);
+            if (Settings.Secure.getInt(mContext.getContentResolver(),
+                    SETTING_TOUCHPAD_STATUS) == 0) {
+                mTouchpadEnabled = false;
+                nativeToggleTouchpad(false);
+            }
+        } catch (SettingNotFoundException e) {
         }
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_DOCK_EVENT);
+        context.registerReceiver(mDockReceiver, filter);
     }
+
+    BroadcastReceiver mDockReceiver = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+            if (Intent.ACTION_DOCK_EVENT.equals(intent.getAction())) {
+                int dockMode = intent.getIntExtra(Intent.EXTRA_DOCK_STATE,
+                        Intent.EXTRA_DOCK_STATE_UNDOCKED);
+                if (dockMode != Intent.EXTRA_DOCK_STATE_UNDOCKED) {
+                    nativeToggleTouchpad(mTouchpadEnabled);
+                }
+            }
+        }
+    };
 
     @Override
     public int handleKeyEvent(KeyEvent event) {
@@ -172,21 +184,13 @@ public final class KeyHandler implements DeviceKeyHandler {
         }
     }
 
-    public void enableTouchpad(boolean enable) {
-        if (mDeviceSettingsContext != null) {
-            SharedPreferences prefs = mDeviceSettingsContext.getSharedPreferences(
-                    PREFS_FILE, Context.MODE_WORLD_READABLE);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putBoolean(PREFS_TOUCHPAD_STATUS, enable);
-            editor.commit();
-        }
-
-        nativeToggleTouchpad(enable);
-    }
-
     private void toggleTouchpad() {
         mTouchpadEnabled = !mTouchpadEnabled;
-        enableTouchpad(mTouchpadEnabled);
+        nativeToggleTouchpad(mTouchpadEnabled);
+
+        int enabled = mTouchpadEnabled ? 1 : 0;
+        Settings.Secure.putInt(mContext.getContentResolver(),
+                SETTING_TOUCHPAD_STATUS, enabled);
     }
 
     private void brightnessDown() {

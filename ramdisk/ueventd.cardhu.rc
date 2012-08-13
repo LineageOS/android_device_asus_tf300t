@@ -1,4 +1,4 @@
-/dev/knvmap  0660	system	system
+/dev/knvmap	0660	system	system
 /dev/nvmap	0666	system	system
 /dev/tegra_avp	0660	media	media
 /dev/tegra_avpchannel	0660	media	media
@@ -44,4 +44,3 @@
 /dev/touchpanel 0660     system  system 
 /dev/elan-iap   0660     system  system
 /dev/rfkill     0660    wifi    wifi
-

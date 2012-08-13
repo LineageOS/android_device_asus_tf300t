@@ -5,12 +5,9 @@
       android:versionCode="1"
       android:versionName="1.0">
 
-    <uses-sdk android:targetSdkVersion="15"/>
-
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-sdk android:minSdkVersion="16"/>
 
     <application android:label="@string/app_name" >
-        <uses-library android:name="com.cyanogenmod.asusdec" android:required="true" />
 
         <activity
             android:name="com.cyanogenmod.settings.device.DeviceSettings"
@@ -23,13 +20,6 @@
             </intent-filter>
 
         </activity>
-
-        <receiver
-          android:name="com.cyanogenmod.settings.device.DeviceSettings$BootCompletedReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
 
     </application>
 
