@@ -91,9 +91,7 @@ int main(int argc, char *argv[])
 
 	if (stat(dest, &st) == 0 ) {
 		SLOGI("%s exists", dest);
-		chown(dest, 1000, 1010);
-		chmod(dest, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-		goto exit;
+		goto permissions;
 	}
 
 	nvram = read_file(src);
@@ -167,7 +165,10 @@ write:
 
 	write(fd, out, strlen(out));
 	close(fd);
-	chown(dest, 1000, 1010);
+
+permissions:
+    chown(dest, 1000, 1010);
+	chmod(dest, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
 exit:
     if (err == 0) {
