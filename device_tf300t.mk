@@ -113,7 +113,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # media files
 PRODUCT_COPY_FILES += \
     device/asus/tf300t/media_codecs.xml:system/etc/media_codecs.xml \
-    device/asus/tf300t/media_profiles.xml:system/etc/media_profiles.xml
+    device/asus/tf300t/media_profiles.xml:system/etc/media_profiles.xml \
+    device/asus/tf300t/audio_policy.conf:system/etc/audio_policy.conf
 
 # Inherit tablet dalvik settings
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
