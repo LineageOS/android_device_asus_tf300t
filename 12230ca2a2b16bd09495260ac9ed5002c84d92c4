@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX//+iI\u003d",
+        "filename": "AutoParts/res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-05-05T00:42:47Z",
+      "side": 1,
+      "message": "- Energiestanden CPU wijzigen",
+      "revId": "12230ca2a2b16bd09495260ac9ed5002c84d92c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
