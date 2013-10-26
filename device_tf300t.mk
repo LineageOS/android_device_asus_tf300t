@@ -35,7 +35,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/elan-touchscreen.idc:system/usr/idc/elan-touchscreen.idc \
     $(LOCAL_PATH)/idc/elantech_touchscreen.idc:system/usr/idc/elantech_touchscreen.idc \
     $(LOCAL_PATH)/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc \
-    $(LOCAL_PATH)/idc/panjit_touch.idc:system/usr/idc/panjit_touch.idc
+    $(LOCAL_PATH)/idc/panjit_touch.idc:system/usr/idc/panjit_touch.idc \
+    $(LOCAL_PATH)/prebuilt/asusdec.kcm:system/usr/keychars/asusdec.kcm \
+    $(LOCAL_PATH)/prebuilt/asusdec.kl:system/usr/keylayout/asusdec.kl
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -70,6 +72,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     tinymix \
     libaudioutils \
+    AutoParts_tfp \
     blobpack_tfp \
     mischelp \
     wifimacwriter \
