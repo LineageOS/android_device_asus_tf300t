@@ -94,15 +94,25 @@ TARGET_KERNEL_CONFIG := tf300t_cm10_defconfig
 # Custom Tools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/asus/tf300t/releasetools/tf300t_ota_from_target_files
 
-# SELinux policies
+# SELinux Defines
 BOARD_SEPOLICY_DIRS := \
-    device/asus/tf300t/selinux
+    device/asus/tf300t/sepolicy
 
 BOARD_SEPOLICY_UNION := \
     file_contexts \
-    file.te \
+    genfs_contexts \
+    app.te \
+    bdaddwriter.te \
     device.te \
-    domain.te
+    drmserver.te \
+    init_shell.te \
+    file.te \
+    rild.te \
+    sensors_config.te \
+    shell.te \
+    surfaceflinger.te \
+    system.te \
+    zygote.te
 
 BOARD_HARDWARE_CLASS := device/asus/tf300t/cmhw/
 
