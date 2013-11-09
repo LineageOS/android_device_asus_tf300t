@@ -15,6 +15,7 @@
 #
 
 BOARD_USES_GENERIC_AUDIO := false
+BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 USE_CAMERA_STUB := false
 
 # inherit from the proprietary version
