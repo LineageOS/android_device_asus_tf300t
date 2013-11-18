@@ -13,9 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
+USE_PROPRIETARY_AUDIO_EXTENSIONS := true
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_ALSA_AUDIO := false
+BOARD_USES_TINY_AUDIO := false
+BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 BOARD_USES_GENERIC_AUDIO := false
 USE_CAMERA_STUB := false
+
+BOARD_EGL_WORKAROUND_BUG_10194508 := true
+
 
 # inherit from the proprietary version
 -include vendor/asus/tf300t/BoardConfigVendor.mk
@@ -49,7 +58,7 @@ BOARD_KERNEL_PAGESIZE :=
 # EGL settings
 BOARD_EGL_CFG := device/asus/tf300t/egl.cfg
 USE_OPENGL_RENDERER := true
-
+BOARD_HAVE_PIXEL_FORMAT_INFO := true
 # Misc display settings
 BOARD_USE_SKIA_LCDTEXT := true
 BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER := true
@@ -93,19 +102,34 @@ TARGET_KERNEL_CONFIG := tf300t_cm10_defconfig
 # Custom Tools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/asus/tf300t/releasetools/tf300t_ota_from_target_files
 
-# SELinux policies
+# SELinux Defines
 BOARD_SEPOLICY_DIRS := \
-    device/asus/tf300t/selinux
+    device/asus/tf300t/sepolicy
 
 BOARD_SEPOLICY_UNION := \
     file_contexts \
-    file.te \
+    genfs_contexts \
+    app.te \
+    btmacreader.te \
     device.te \
-    domain.te
+    drmserver.te \
+    init_shell.te \
+    file.te \
+    rild.te \
+    sensors_config.te \
+    shell.te \
+    surfaceflinger.te \
+    system.te \
+    zygote.te
+
 
 BOARD_HARDWARE_CLASS := device/asus/tf300t/cmhw/
 
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 # Recovery Options
+
+USE_SET_METADATA := false
+
 BOARD_CUSTOM_BOOTIMG_MK := device/asus/tf300t/recovery/recovery.mk
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true

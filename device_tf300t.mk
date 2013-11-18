@@ -25,9 +25,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.cardhu.cpu.rc:root/init.cardhu.cpu.rc \
     $(LOCAL_PATH)/ramdisk/fstab.cardhu:root/fstab.cardhu
 
-# Prebuilt config files
-PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.nonsmartphone.conf:system/etc/bluetooth/main.conf
+
 
 # Input device config files
 PRODUCT_COPY_FILES += \
@@ -73,7 +71,7 @@ PRODUCT_PACKAGES += \
     blobpack_tfp \
     mischelp \
     wifimacwriter \
-    com.cyanogenmod.asusdec \
+    #com.cyanogenmod.asusdec \
     libasusdec_jni
 
 # Propertys spacific for this device
