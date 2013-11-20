@@ -21,6 +21,9 @@ USE_CAMERA_STUB := false
 # Camera options
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
+# Dumpstate
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.cardhu
+
 # inherit from the proprietary version
 -include vendor/asus/tf300t/BoardConfigVendor.mk
 
