@@ -21,8 +21,10 @@ USE_CAMERA_STUB := false
 # Camera options
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
-# Dumpstate
-BOARD_HAL_STATIC_LIBRARIES := libdumpstate.cardhu
+# Cardhu HAL libraries
+BOARD_HAL_STATIC_LIBRARIES := \
+    libdumpstate.cardhu \
+    libhealthd.cardhu
 
 # inherit from the proprietary version
 -include vendor/asus/tf300t/BoardConfigVendor.mk
@@ -67,9 +69,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/asus/tf300t/bluetooth/vnd_tf300t.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/asus/tf300t/bluetooth
-
-# Support for dock battery
-TARGET_HAS_DOCK_BATTERY := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
