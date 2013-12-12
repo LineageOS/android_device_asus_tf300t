@@ -25,10 +25,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.cardhu.cpu.rc:root/init.cardhu.cpu.rc \
     $(LOCAL_PATH)/ramdisk/fstab.cardhu:root/fstab.cardhu
 
-# Prebuilt config files
-PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.nonsmartphone.conf:system/etc/bluetooth/main.conf
-
 # Input device config files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc \
@@ -73,9 +69,7 @@ PRODUCT_PACKAGES += \
     libaudioutils \
     blobpack_tfp \
     mischelp \
-    wifimacwriter \
-    com.cyanogenmod.asusdec \
-    libasusdec_jni
+    wifimacwriter
 
 # Propertys spacific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -99,6 +93,11 @@ PRODUCT_COPY_FILES += \
     device/asus/tf300t/media_codecs.xml:system/etc/media_codecs.xml \
     device/asus/tf300t/media_profiles.xml:system/etc/media_profiles.xml \
     device/asus/tf300t/audio_policy.conf:system/etc/audio_policy.conf
+
+# wifi files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 # gps config files
 PRODUCT_COPY_FILES += \
