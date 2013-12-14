@@ -66,6 +66,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     tinymix \
     libaudioutils \
+    AutoParts_tfp \
     blobpack_tfp \
     mischelp \
     wifimacwriter \
