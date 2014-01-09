@@ -24,7 +24,7 @@
     <string name="kp_tp_off">TouchPad VYP</string>
     <string name="kp_brightness_manual">Podsvícení <xliff:g id="brightness">%1$s</xliff:g></string>
     <string name="kp_brightness_auto">Podsvícení AUTO</string>
-    <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
+    <string name="kp_volume">Hlasitost <xliff:g id="volume">%1$s</xliff:g></string>
     <string name="kp_volume_mute_on">Ztišení ZAP</string>
     <string name="kp_volume_mute_off">Ztišení VYP</string>
     <string name="kp_media_play_pause">Média HRÁT/POZASTAVIT</string>
