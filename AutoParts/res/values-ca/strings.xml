@@ -31,9 +31,9 @@
   <string name="kp_media_play_pause">Media REPRODUEIX/PAUSA</string>
   <string name="kp_media_previous">Media ANTERIOR</string>
   <string name="kp_media_next">Media SEGÜENT</string>
-  <string name="kp_screenshot">Fes captura de pantalla</string>
-  <string name="kp_explorer">Llança el navegador</string>
-  <string name="kp_settings">Llança els ajustaments</string>
+  <string name="kp_screenshot">Fes una captura de pantalla</string>
+  <string name="kp_explorer">Obre el navegador</string>
+  <string name="kp_settings">Obre els ajustaments</string>
   <string name="kp_caps_lock_on">Bloq Maj-ON</string>
   <string name="kp_caps_lock_off">Bloq-Maj OFF</string>
 </resources>
