@@ -31,7 +31,7 @@
   <string name="kp_media_play_pause">Medien: Play/Pause</string>
   <string name="kp_media_previous">Medien: Vorheriger</string>
   <string name="kp_media_next">Medien: Nächster</string>
-  <string name="kp_screenshot">Bildschirmfoto</string>
+  <string name="kp_screenshot">Bildschirmfoto erstellen</string>
   <string name="kp_explorer">Browser starten</string>
   <string name="kp_settings">Einstellungen öffnen</string>
   <string name="kp_caps_lock_on">Caps-Lock AN</string>

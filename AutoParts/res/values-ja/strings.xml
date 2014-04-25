@@ -16,24 +16,24 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Impostazioni avanzate</string>
+  <string name="app_name">詳細設定</string>
   <string name="kp_wifi_on">Wi-Fi ON</string>
   <string name="kp_wifi_off">Wi-Fi OFF</string>
   <string name="kp_bt_on">Bluetooth ON</string>
   <string name="kp_bt_off">Bluetooth OFF</string>
-  <string name="kp_tp_on">TouchPad ON</string>
-  <string name="kp_tp_off">TouchPad OFF</string>
-  <string name="kp_brightness_manual">Luminosità <xliff:g id="brightness">%1$s</xliff:g></string>
-  <string name="kp_brightness_auto">Luminosità AUTOMATICA</string>
-  <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
-  <string name="kp_volume_mute_on">Silenzioso ON</string>
-  <string name="kp_volume_mute_off">Silenzioso OFF</string>
-  <string name="kp_media_play_pause">Media PLAY/PAUSA</string>
-  <string name="kp_media_previous">Media PRECEDENTE</string>
-  <string name="kp_media_next">Media SUCCESSIVO</string>
-  <string name="kp_screenshot">Cattura schermata</string>
-  <string name="kp_explorer">Avvia browser</string>
-  <string name="kp_settings">Avvia impostazioni</string>
+  <string name="kp_tp_on">タッチパッド ON</string>
+  <string name="kp_tp_off">タッチパッド OFF</string>
+  <string name="kp_brightness_manual">明るさ <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">明るさ 自動</string>
+  <string name="kp_volume">音量 <xliff:g id="volume">%1$s</xliff:g></string>
+  <string name="kp_volume_mute_on">ミュート ON</string>
+  <string name="kp_volume_mute_off">ミュート OFF</string>
+  <string name="kp_media_play_pause">メディア 再生/一時停止</string>
+  <string name="kp_media_previous">メディア 前へ</string>
+  <string name="kp_media_next">メディア 次へ</string>
+  <string name="kp_screenshot">スクリーンショットの撮影</string>
+  <string name="kp_explorer">ブラウザを起動</string>
+  <string name="kp_settings">設定を起動</string>
   <string name="kp_caps_lock_on">Caps-Lock ON</string>
   <string name="kp_caps_lock_off">Caps-Lock OFF</string>
 </resources>
