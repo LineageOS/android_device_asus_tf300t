@@ -24,6 +24,7 @@
   <string name="kp_tp_on">TouchPad Uključen</string>
   <string name="kp_tp_off">TouchPad Isključen</string>
   <string name="kp_brightness_manual">Svjetlost <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Automatska svjetlina</string>
   <string name="kp_volume">Glasnoća <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">Bešuman Način Uključen</string>
   <string name="kp_volume_mute_off">Bešuman Način Isključen</string>
