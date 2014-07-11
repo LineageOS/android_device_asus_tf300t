@@ -14,12 +14,13 @@
 
     <application
         android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher_cmdevicesettings">
+        android:icon="@mipmap/ic_launcher_settings">
 
         <activity
             android:name="com.cyanogenmod.settings.device.DeviceSettings"
-            android:icon="@drawable/ic_launcher_cmdevicesettings"
-            android:label="@string/app_name" >
+            android:icon="@mipmap/ic_launcher_settings"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Main" >
 
             <intent-filter>
                 <action android:name="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS" />
