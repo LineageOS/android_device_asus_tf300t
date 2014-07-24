@@ -16,24 +16,24 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">ڕێکخستنی پێشکه‌وتو</string>
+  <string name="app_name">ڕێکخستنی پەرەسەندوو</string>
   <string name="kp_wifi_on">کردنه‌وه‌ی Wi-Fi</string>
   <string name="kp_wifi_off">کوژاندنه‌وه‌ی Wi-Fi</string>
   <string name="kp_bt_on">کردنه‌وه‌ی بلوتوس</string>
   <string name="kp_bt_off">کوژاندنه‌وه‌ی بلوتوس</string>
   <string name="kp_tp_on">کردنه‌وه‌ی ساوین پاد</string>
   <string name="kp_tp_off">کوژاندنه‌وه‌ی ساوین پاد</string>
-  <string name="kp_brightness_manual">ڕۆشنای</string>
-  <string name="kp_brightness_auto">ڕۆشنای خۆکارانه‌</string>
-  <string name="kp_volume">ده‌نگ</string>
+  <string name="kp_brightness_manual">ڕۆشنایی <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">ڕۆشنایی خۆکارانه‌</string>
+  <string name="kp_volume">دەنگ <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">کردنه‌وه‌ی کپکردن</string>
   <string name="kp_volume_mute_off">کوژانه‌وه‌ی کپکردن</string>
   <string name="kp_media_play_pause">لێدان و وه‌ستانی ده‌نگ</string>
   <string name="kp_media_previous">ده‌نگی پێشوو</string>
   <string name="kp_media_next">ده‌نگی دواتر</string>
-  <string name="kp_screenshot">وێنه‌ی شاشه‌ گره‌</string>
-  <string name="kp_explorer">کردنەوەی وێبگەر</string>
+  <string name="kp_screenshot">وێنەی ڕوونما بگرە</string>
+  <string name="kp_explorer">چالاکردنی وێبگەر</string>
   <string name="kp_settings">خستنەگەڕی ڕێکخستنەکان</string>
-  <string name="kp_caps_lock_on">کردنەوەی قوفڵی گەورە</string>
-  <string name="kp_caps_lock_off">کوژانەوەی قوفڵی گەورەکردنەوە</string>
+  <string name="kp_caps_lock_on">چالاکردنی قوفڵی گەورە</string>
+  <string name="kp_caps_lock_off">ناچالاکردنی قوفڵی گەورەچالاکردن</string>
 </resources>
