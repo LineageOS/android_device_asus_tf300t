@@ -17,5 +17,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Papildu iestatījumi</string>
-  <string name="kp_wifi_on">Wi-Fi ieslēgts</string>
+  <string name="kp_wifi_on">WiFi ieslēgts</string>
+  <string name="kp_wifi_off">WiFi izslēgts</string>
+  <string name="kp_bt_on">Bluetooth ieslēgts</string>
+  <string name="kp_bt_off">Bluetooth izslēgts</string>
+  <string name="kp_tp_on">Skārienpaliktnis ieslēgts</string>
+  <string name="kp_tp_off">Skārienpaliktnis izslēgts</string>
+  <string name="kp_brightness_manual">Spilgtums <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Automātisks spilgtums</string>
+  <string name="kp_volume">Skaļums <xliff:g id="volume">%1$s</xliff:g></string>
+  <string name="kp_volume_mute_on">Klusums ieslēgts</string>
+  <string name="kp_volume_mute_off">Klusums izslēgts</string>
+  <string name="kp_media_play_pause">Multivide ATSKAŅOT/APTURĒT</string>
+  <string name="kp_media_previous">Multivide IEPRIEKŠĒJAIS</string>
+  <string name="kp_media_next">Multivide NĀKOŠAIS</string>
+  <string name="kp_screenshot">Uzņemt ekrānattēlu</string>
+  <string name="kp_explorer">Palaist pārlūku</string>
+  <string name="kp_settings">Palaist iestatījumus</string>
+  <string name="kp_caps_lock_on">LIELIE burti Ieslēgti</string>
+  <string name="kp_caps_lock_off">Lielie burti izslēgti</string>
 </resources>
