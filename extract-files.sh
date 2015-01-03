@@ -11,5 +11,7 @@ for FILE in `cat proprietary-files.txt`; do
     adb pull /system/$FILE $BASE/$FILE
 done
 
+adb pull /system/lib/hw/camera.tegra.so $BASE/lib/hw/camera.vendor.tegra.so
+
 ./setup-makefiles.sh
 

@@ -101,25 +101,6 @@ TARGET_KERNEL_CONFIG := tf300t_cm11_defconfig
 # Custom Tools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/asus/tf300t/releasetools/tf300t_ota_from_target_files
 
-# SELinux Defines
-BOARD_SEPOLICY_DIRS := \
-    device/asus/tf300t/sepolicy
-
-BOARD_SEPOLICY_UNION := \
-    file_contexts \
-    genfs_contexts \
-    app.te \
-    bdaddwriter.te \
-    device.te \
-    drmserver.te \
-    init_shell.te \
-    file.te \
-    rild.te \
-    sensors_config.te \
-    surfaceflinger.te \
-    system.te \
-    zygote.te
-
 # CMHW
 BOARD_HARDWARE_CLASS := device/asus/tf300t/cmhw/
 
@@ -131,5 +112,3 @@ BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_RECOVERY_FSTAB := device/asus/tf300t/ramdisk/fstab.cardhu
 RECOVERY_FSTAB_VERSION := 2
 BOARD_RECOVERY_SWIPE := true
-
-

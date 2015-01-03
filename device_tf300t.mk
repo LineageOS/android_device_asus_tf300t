@@ -71,9 +71,9 @@ PRODUCT_PACKAGES += \
     AutoParts_tfp \
     blobpack_tfp \
     mischelp \
-    wifimacwriter
-#    com.cyanogenmod.asusdec \
-#    libasusdec_jni
+    wifimacwriter \
+    com.cyanogenmod.asusdec \
+    libasusdec_jni
 
 # Propertys spacific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -97,6 +97,33 @@ PRODUCT_COPY_FILES += \
     device/asus/tf300t/media_codecs.xml:system/etc/media_codecs.xml \
     device/asus/tf300t/media_profiles.xml:system/etc/media_profiles.xml \
     device/asus/tf300t/audio_policy.conf:system/etc/audio_policy.conf
+
+# SELINUX Defines
+BOARD_SEPOLICY_DIRS := \
+    device/asus/tf300t/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+        file_contexts \
+        genfs_contexts \
+        bluetooth.te \
+        device.te \
+        domain.te \
+        drmserver.te \
+	init.te \
+        init_shell.te \
+        file.te \
+        gpsd.te \
+        keystore.te \
+        lmkd.te \
+        mediaserver.te \
+        recovery.te \
+        rild.te \
+        sensors_config.te \
+        surfaceflinger.te \
+        system_app.te \
+        system_server.te \
+        ueventd.te \
+        vold.te
 
 # wifi files
 PRODUCT_PACKAGES += \
