@@ -16,6 +16,24 @@
       "revId": "4a4c4144751d5326937b0e0b16a83cd30b00162d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3de6a6b4",
+        "filename": "camera/CameraWrapper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 3917
+      },
+      "writtenOn": "2015-01-06T09:38:16Z",
+      "side": 1,
+      "message": "Hi,\n\ncan you try without the camera wrapper? I got an exception complaining about the auto value, but maybe I did something else wrong...?\n\nChris",
+      "parentUuid": "7aa08908_0a96fe4b",
+      "revId": "4a4c4144751d5326937b0e0b16a83cd30b00162d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
