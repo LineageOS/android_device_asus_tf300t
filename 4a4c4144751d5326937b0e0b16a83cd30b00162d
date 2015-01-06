@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_0a96fe4b",
+        "filename": "camera/CameraWrapper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4129
+      },
+      "writtenOn": "2015-01-06T01:07:01Z",
+      "side": 1,
+      "message": "Are you sure?\n\n$ strings proprietary/lib/hw/camera.tegra.so|grep antibanding-values -A 1\nantibanding-values\noff,auto,50hz,60hz\n\nEither way, setting it to 60hz might make indoor photos look weird in many countries.",
+      "revId": "4a4c4144751d5326937b0e0b16a83cd30b00162d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
