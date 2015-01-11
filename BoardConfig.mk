@@ -14,11 +14,14 @@
 # limitations under the License.
 #
 
+# Audio Options
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 BOARD_HAVE_PRE_KITKAT_AUDIO_POLICY_BLOB := true
-USE_CAMERA_STUB := false
 USE_LEGACY_AUDIO_POLICY := 1
+
+# Camera options
+USE_CAMERA_STUB := false
 
 # defines to support legacy blobs
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DADD_LEGACY_SET_POSITION_SYMBOL -DADD_LEGACY_MEMORY_DEALER_CONSTRUCTOR_SYMBOL -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
@@ -35,11 +38,11 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Board naming
 TARGET_NO_RADIOIMAGE := true
-TARGET_BOOTLOADER_BOARD_NAME := cardhu
-TARGET_NO_BOOTLOADER := true
-
 TARGET_BOARD_PLATFORM := tegra
+TARGET_BOOTLOADER_BOARD_NAME := cardhu
 
+# Target arch settings
+TARGET_NO_BOOTLOADER := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -83,20 +86,17 @@ WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/system/vendor/firmware/bcm4329/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin"
 
+# Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 805306368
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 29850022707
 BOARD_FLASH_BLOCK_SIZE := 4096
-#TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
-# Try to build the kernel
+# Build kernel from source
 TARGET_KERNEL_SOURCE := kernel/asus/tf300t
-TARGET_KERNEL_CONFIG := tf300t_cm11_defconfig
-
-# Prebuilt Kernel Fallback
-#TARGET_PREBUILT_KERNEL := device/asus/tf300t/kernel
+TARGET_KERNEL_CONFIG := tegra3_tf300t_defconfig
 
 # Custom Tools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/asus/tf300t/releasetools/tf300t_ota_from_target_files
