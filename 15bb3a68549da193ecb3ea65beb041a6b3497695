@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_617d156e",
+        "filename": "sepolicy/system_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5678
+      },
+      "writtenOn": "2015-01-11T15:50:52Z",
+      "side": 1,
+      "message": "search should be included in rw_file_perms",
+      "revId": "15bb3a68549da193ecb3ea65beb041a6b3497695",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
