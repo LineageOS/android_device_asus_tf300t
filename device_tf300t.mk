@@ -103,6 +103,7 @@ BOARD_SEPOLICY_DIRS := \
     device/asus/tf300t/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+	service_contexts \
         file_contexts \
         genfs_contexts \
         bluetooth.te \
