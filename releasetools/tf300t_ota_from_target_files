@@ -407,10 +407,7 @@ def AppendAssertions(script, info_dict, oem_dict = None):
   oem_props = info_dict.get("oem_fingerprint_properties")
   if oem_props is None or len(oem_props) == 0:
     if OPTIONS.override_device == "auto":
-      if OPTIONS.override_prop:
-        device = GetBuildProp("ro.build.product", info_dict)
-      else:
-        device = GetBuildProp("ro.product.device", info_dict)
+      device = GetBuildProp("ro.product.device", info_dict)
     else:
       device = OPTIONS.override_device
     script.AssertDevice(device)
@@ -484,6 +481,16 @@ def GetImage(which, tmpdir, info_dict):
           tmpdir, info_dict, block_list=mappath)
 
   return sparse_img.SparseImage(path, mappath)
+
+
+def CopyInstallTools(output_zip):
+  oldcwd = os.getcwd()
+  os.chdir(os.getenv('OUT'))
+  for root, subdirs, files in os.walk("install"):
+    for f in files:
+      p = os.path.join(root, f)
+      output_zip.write(p, p)
+  os.chdir(oldcwd)
 
 
 def WriteFullOTAPackage(input_zip, output_zip):
@@ -574,14 +581,15 @@ reboot_now("%(bcb_dev)s", "recovery");
 else if get_stage("%(bcb_dev)s") == "3/3" then
 """ % bcb_dev)
 
+  script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 
+  CopyInstallTools(output_zip)
+  script.UnpackPackageDir("install", "/tmp/install")
+  script.SetPermissionsRecursive("/tmp/install", 0, 0, 0755, 0644, None, None)
+  script.SetPermissionsRecursive("/tmp/install/bin", 0, 0, 0755, 0755, None, None)
+
   if OPTIONS.backuptool:
-    if block_based:
-      common.ZipWriteStr(output_zip, "system/bin/backuptool.sh",
-                     ""+input_zip.read("SYSTEM/bin/backuptool.sh"))
-      common.ZipWriteStr(output_zip, "system/bin/backuptool.functions",
-                     ""+input_zip.read("SYSTEM/bin/backuptool.functions"))
     script.Mount("/system")
     script.RunBackup("backup")
     script.Unmount("/system")
@@ -593,12 +601,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   if HasVendorPartition(input_zip):
     system_progress -= 0.1
 
-  if block_based:
-    common.ZipWriteStr(output_zip, "system/bin/otasigcheck.sh",
-                   ""+input_zip.read("SYSTEM/bin/otasigcheck.sh"))
+  script.AppendExtra("if is_mounted(\"/data\") then")
+  script.ValidateSignatures("data")
+  script.AppendExtra("else")
   script.Mount("/data")
   script.ValidateSignatures("data")
   script.Unmount("/data")
+  script.AppendExtra("endif;")
 
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
@@ -666,11 +675,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   common.CheckSize(blob.data, "boot.img", OPTIONS.info_dict)
   common.ZipWriteStr(output_zip, "boot.blob", blob.data)
 
-  if block_based:
-    script.Mount("/system")
-  script.ValidateSignatures("cleanup")
-  if block_based:
-    script.Unmount("/system")
+  device_specific.FullOTA_PostValidate()
 
   if OPTIONS.backuptool:
     script.ShowProgress(0.02, 10)
@@ -709,6 +714,9 @@ endif;
 """ % bcb_dev)
   script.AddToZip(input_zip, output_zip, input_path=OPTIONS.updater_binary)
   WriteMetadata(metadata, output_zip)
+
+  common.ZipWriteStr(output_zip, "system/build.prop",
+                     ""+input_zip.read("SYSTEM/build.prop"))
 
   common.ZipWriteStr(output_zip, "META-INF/org/cyanogenmod/releasekey",
                      ""+input_zip.read("META/releasekey.txt"))
@@ -1132,11 +1140,16 @@ def WriteIncrementalOTAPackage(target_zip, source_zip, output_zip):
     script.Mount("/oem", recovery_mount_options)
     oem_dict = common.LoadDictionaryFromLines(open(OPTIONS.oem_source).readlines())
 
-  metadata = {"pre-device": GetOemProperty("ro.product.device", oem_props, oem_dict,
-                                         OPTIONS.source_info_dict),
-              "post-timestamp": GetBuildProp("ro.build.date.utc",
-                                             OPTIONS.target_info_dict),
-              }
+  if OPTIONS.override_prop:
+    metadata = {"post-timestamp": GetBuildProp("ro.build.date.utc",
+                                               OPTIONS.target_info_dict),
+                }
+  else:
+    metadata = {"pre-device": GetOemProperty("ro.product.device", oem_props, oem_dict,
+                                           OPTIONS.source_info_dict),
+                "post-timestamp": GetBuildProp("ro.build.date.utc",
+                                               OPTIONS.target_info_dict),
+                }
 
   device_specific = common.DeviceSpecificParams(
       source_zip=source_zip,
