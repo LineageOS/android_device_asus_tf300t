@@ -54,9 +54,6 @@ PRODUCT_COPY_FILES += \
 # Build characteristics setting 
 PRODUCT_CHARACTERISTICS := tablet
 
-# This device have enough room for precise davick
-PRODUCT_TAGS += dalvik.gc.type-precise
-
 # Extra packages to build for this device
 PRODUCT_PACKAGES += \
     camera.tegra \
@@ -143,4 +140,4 @@ PRODUCT_COPY_FILES += \
     device/asus/tf300t/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
 # Inherit tablet dalvik settings
-$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
