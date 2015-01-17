@@ -100,20 +100,22 @@ BOARD_SEPOLICY_DIRS := \
     device/asus/tf300t/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+	file_contexts \
+	property_contexts \
 	service_contexts \
-        file_contexts \
         genfs_contexts \
         bluetooth.te \
         device.te \
         domain.te \
         drmserver.te \
-	init.te \
-        init_shell.te \
         file.te \
         gpsd.te \
+        init.te \
+        init_shell.te \
         keystore.te \
         lmkd.te \
         mediaserver.te \
+        property.te \
         recovery.te \
         rild.te \
         sensors_config.te \
