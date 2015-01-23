@@ -56,7 +56,6 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # Extra packages to build for this device
 PRODUCT_PACKAGES += \
-    camera.tegra \
     librs_jni \
     com.android.future.usb.accessory \
     make_ext4fs \
@@ -134,6 +133,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
 
 # gps config files
 PRODUCT_COPY_FILES += \

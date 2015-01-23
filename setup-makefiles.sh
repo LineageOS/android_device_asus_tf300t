@@ -38,8 +38,7 @@ done
 echo "    $OUTDIR/proprietary/lib/mpu3050/libmllite.so:system/lib/libmllite.so \\
     $OUTDIR/proprietary/lib/mpu3050/libmlplatform.so:system/lib/libmlplatform.so \\
     $OUTDIR/proprietary/lib/mpu3050/libmplmpu.so:system/lib/libmplmpu.so \\
-    $OUTDIR/proprietary/lib/mpu3050/libsensors.mpl3050.so:system/lib/libsensors.mpl3050.so \\
-    $OUTDIR/proprietary/lib/hw/camera.vendor.tegra.so:system/lib/hw/camera.vendor.tegra.so" \
+    $OUTDIR/proprietary/lib/mpu3050/libsensors.mpl3050.so:system/lib/libsensors.mpl3050.so" \
 	>> $MAKEFILE
 
 (cat << EOF) > ../../../$OUTDIR/$DEVICE-vendor.mk
