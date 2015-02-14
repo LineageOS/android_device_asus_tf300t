@@ -146,6 +146,8 @@ lib/libsensors.ltr558als.so
 
 lib/libstagefrighthw.so
 
+lib/libdrmdecrypt.so
+
 usr/share/alsa/alsa.conf
 usr/share/alsa/cards/aliases.conf
 usr/share/alsa/pcm/center_lfe.conf
@@ -175,6 +177,7 @@ vendor/firmware/bcm4330/fw_bcmdhd_p2p.bin
 vendor/firmware/bcm4334/fw_bcmdhd.bin
 vendor/firmware/bcm4334/fw_bcmdhd_apsta.bin
 vendor/firmware/bcm4334/fw_bcmdhd_p2p.bin
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/hw/power.cardhu.so
 vendor/lib/libWVStreamControlAPI_L3.so
