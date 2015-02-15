@@ -17,23 +17,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Definições avançadas</string>
-  <string name="kp_wifi_on">Wi-Fi ON</string>
-  <string name="kp_wifi_off">Wi-Fi OFF</string>
-  <string name="kp_bt_on">Bluetooth ON</string>
-  <string name="kp_bt_off">Bluetooth OFF</string>
-  <string name="kp_tp_on">TouchPad ON</string>
-  <string name="kp_tp_off">TouchPad OFF</string>
+  <string name="kp_wifi_on">Wi-Fi LIG</string>
+  <string name="kp_wifi_off">Wi-Fi DESL</string>
+  <string name="kp_bt_on">Bluetooth LIG</string>
+  <string name="kp_bt_off">Bluetooth DESL</string>
+  <string name="kp_tp_on">TouchPad LIG</string>
+  <string name="kp_tp_off">TouchPad DESL</string>
   <string name="kp_brightness_manual">Brilho <xliff:g id="brightness">%1$s</xliff:g></string>
   <string name="kp_brightness_auto">Brilho automático</string>
   <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
-  <string name="kp_volume_mute_on">Silêncio ON</string>
-  <string name="kp_volume_mute_off">Silêncio OFF</string>
-  <string name="kp_media_play_pause">Media Reproduzir/Pausa</string>
-  <string name="kp_media_previous">Media Anterior</string>
-  <string name="kp_media_next">Media Seguinte</string>
+  <string name="kp_volume_mute_on">Silêncio LIG</string>
+  <string name="kp_volume_mute_off">Silêncio DESL</string>
+  <string name="kp_media_play_pause">Reproduzir/Pausar Multimédia</string>
+  <string name="kp_media_previous">Multimédia Anterior</string>
+  <string name="kp_media_next">Multimédia Seguinte</string>
   <string name="kp_screenshot">Tirar captura de ecrã</string>
   <string name="kp_explorer">Abrir navegador</string>
   <string name="kp_settings">Definições de arranque</string>
-  <string name="kp_caps_lock_on">Caps Lock ON</string>
+  <string name="kp_caps_lock_on">Caps Lock LIG</string>
   <string name="kp_caps_lock_off">Caps Lock OFF</string>
 </resources>
