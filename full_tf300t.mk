@@ -18,8 +18,7 @@ $(call inherit-product, device/asus/tf300t/device_tf300t.mk)
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Configure as xhdpi device to prevent breaking without mdpi drawables
-PRODUCT_AAPT_CONFIG := normal mdpi hdpi xhdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # Discard inherited values and use our own instead.
