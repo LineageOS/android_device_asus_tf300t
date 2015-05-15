@@ -17,17 +17,17 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Ezarpen aurreratuak</string>
-  <string name="kp_wifi_on">Wi-Fi-a gaituta</string>
-  <string name="kp_wifi_off">Wi-Fi-a ezgaituta</string>
-  <string name="kp_bt_on">Bluetooth-a gaituta</string>
-  <string name="kp_bt_off">Bluetooth-a ezgaituta</string>
+  <string name="kp_wifi_on">Wi-Fia gaituta</string>
+  <string name="kp_wifi_off">Wi-Fia ezgaituta</string>
+  <string name="kp_bt_on">Bluetooth gaituta</string>
+  <string name="kp_bt_off">Bluetooth ezgaituta</string>
   <string name="kp_tp_on">TouchPad-a gaituta</string>
   <string name="kp_tp_off">TouchPad-a ezgaituta</string>
-  <string name="kp_brightness_manual">Diztira <xliff:g id="brightness">%1$s</xliff:g></string>
-  <string name="kp_brightness_auto">Diztira automatikoa</string>
+  <string name="kp_brightness_manual">Distira <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Distira automatikoa</string>
   <string name="kp_volume">Bolumena <xliff:g id="volume">%1$s</xliff:g></string>
-  <string name="kp_volume_mute_on">Isiltasuna gaituta</string>
-  <string name="kp_volume_mute_off">Isiltasuna ezgaituta</string>
+  <string name="kp_volume_mute_on">Mututu BAI</string>
+  <string name="kp_volume_mute_off">Mututu EZ</string>
   <string name="kp_media_play_pause">Media ERREPRODUZITU/GELDITU</string>
   <string name="kp_media_previous">Media AURREKOA</string>
   <string name="kp_media_next">Media HURRENGOA</string>
