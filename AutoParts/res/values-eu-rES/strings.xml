@@ -31,9 +31,9 @@
   <string name="kp_media_play_pause">Media ERREPRODUZITU/GELDITU</string>
   <string name="kp_media_previous">Media AURREKOA</string>
   <string name="kp_media_next">Media HURRENGOA</string>
-  <string name="kp_screenshot">Pantaila-argazkia egin</string>
-  <string name="kp_explorer">Nabigatzailea</string>
-  <string name="kp_settings">Ezarpenak</string>
+  <string name="kp_screenshot">Egin pantaila-argazkia</string>
+  <string name="kp_explorer">Abiatu nabigatzailea</string>
+  <string name="kp_settings">Abiatu ezarpenak</string>
   <string name="kp_caps_lock_on">Letra larriak gaituta</string>
   <string name="kp_caps_lock_off">Letra larriak ezgaituta</string>
 </resources>
