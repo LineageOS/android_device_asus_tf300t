@@ -1,4 +1,4 @@
-# Copyright (C) 2011 The Android Open Source Project
+# Copyright (C) 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@ $(call inherit-product-if-exists, vendor/asus/tf300t/tf300t-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/asus/tf300t/overlay
 
-# Files needed for boot image
+# files needed for boot image
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.cardhu.rc:root/init.cardhu.rc \
     $(LOCAL_PATH)/ramdisk/init.tf.rc:root/init.tf.rc \
@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.cardhu.cpu.rc:root/init.cardhu.cpu.rc \
     $(LOCAL_PATH)/ramdisk/fstab.cardhu:root/fstab.cardhu
 
-# Input device config files
+# input device config files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc \
     $(LOCAL_PATH)/idc/elan-touchscreen.idc:system/usr/idc/elan-touchscreen.idc \
@@ -33,6 +33,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc \
     $(LOCAL_PATH)/idc/panjit_touch.idc:system/usr/idc/panjit_touch.idc
 
+# permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
@@ -51,41 +52,44 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     $(LOCAL_PATH)/asusdec/com.cyanogenmod.asusdec.xml:system/etc/permissions/com.cyanogenmod.asusdec.xml
 
-# Build characteristics setting 
+# build characteristics setting 
 PRODUCT_CHARACTERISTICS := tablet
 
-# Extra packages to build for this device
+# extra packages to build for this device
 PRODUCT_PACKAGES += \
-    librs_jni \
-    com.android.future.usb.accessory \
-    fsck.f2fs \
-    mkfs.f2fs \
-    setup_fs \
+    AutoParts_tfp \
     audio.a2dp.default \
     audio.r_submix.default \
-    tinymix \
-    libaudioutils \
-    AutoParts_tfp \
     blobpack_tfp \
-    mischelp \
-    wifimacwriter \
+    com.android.future.usb.accessory \
     com.cyanogenmod.asusdec \
-    libasusdec_jni
+    fsck.f2fs \
+    libasusdec_jni \
+    libaudioutils \
+    librs_jni \
+    mischelp \
+    mkfs.f2fs \
+    setup_fs \
+    tinymix \
+    wifimacwriter
 
-# Propertys spacific for this device
+# properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
-    tf.enable=y \
-    ro.opengles.version=131072 \
+    persist.sys.isUsbOtgEnabled=true \
     persist.sys.usb.config=mtp \
-    persist.sys.isUsbOtgEnabled=true
+    ro.carrier=wifi-only \
+    ro.opengles.version=131072 \
+    ro.sf.lcd_density=160 \
+    tf.enable=y \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15
 
-# Tegra 3 spacific overrides
+# Tegra 3 specific overrides
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.tegra.nvmmlite=1
+    persist.tegra.nvmmlite=1 \
+    ro.zygote.disable_gl_preload=true
 
-# Prime spacific overrides
+# transformer specific overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.epad.model=TF300T \
     ro.product.model=TF300T
@@ -104,50 +108,53 @@ BOARD_SEPOLICY_DIRS := \
     device/asus/tf300t/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-	file_contexts \
-	property_contexts \
-	service_contexts \
-        genfs_contexts \
-        bluetooth.te \
-        device.te \
-        domain.te \
-        drmserver.te \
-        file.te \
-        gpsd.te \
-        init.te \
-        init_shell.te \
-        keystore.te \
-        lmkd.te \
-        mediaserver.te \
-        property.te \
-        recovery.te \
-        rild.te \
-        sensors_config.te \
-        surfaceflinger.te \
-        system_app.te \
-        system_server.te \
-        ueventd.te \
-        vold.te
+    file_contexts \
+    property_contexts \
+    service_contexts \
+    bluetooth.te \
+    device.te \
+    domain.te \
+    drmserver.te \
+    file.te \
+    genfs_contexts \
+    gpsd.te \
+    init.te \
+    init_shell.te \
+    keystore.te \
+    lmkd.te \
+    mediaserver.te \
+    property.te \
+    recovery.te \
+    rild.te \
+    sensors_config.te \
+    surfaceflinger.te \
+    system_app.te \
+    system_server.te \
+    ueventd.te \
+    vold.te
 
 # wifi files
 PRODUCT_PACKAGES += \
-	hostapd \
-	dhcpcd.conf \
-	wpa_supplicant \
-	wpa_supplicant.conf
+    dhcpcd.conf \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
-# Camera
+# camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 # gps config files
 PRODUCT_COPY_FILES += \
-    device/asus/tf300t/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     device/asus/tf300t/gps.conf:system/etc/gps.conf \
-    device/asus/tf300t/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+    device/asus/tf300t/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
 
-# Inherit tablet dalvik settings
+# bt config files
+PRODUCT_COPY_FILES += \
+    device/asus/tf300t/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf \
+
+# inherit tablet dalvik settings
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
