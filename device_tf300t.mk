@@ -78,7 +78,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.supplicant_scan_interval=15 \
     tf.enable=y \
     ro.opengles.version=131072 \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=mtp \
+    persist.sys.isUsbOtgEnabled=true
 
 # Tegra 3 spacific overrides
 PRODUCT_PROPERTY_OVERRIDES += \
