@@ -23,8 +23,8 @@
   <string name="kp_bt_off">Bludento malaktiva</string>
   <string name="kp_tp_on">TouchPad aktiva</string>
   <string name="kp_tp_off">TouchPad malaktiva</string>
-  <string name="kp_brightness_manual">Lumo <xliff:g id="brightness">%1$s</xliff:g></string>
-  <string name="kp_brightness_auto">Brilo aŭtomata</string>
+  <string name="kp_brightness_manual">Brileco <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Brileco aŭtomata</string>
   <string name="kp_volume">Laŭteco <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">Muto aktiva</string>
   <string name="kp_volume_mute_off">Muto malaktiva</string>
