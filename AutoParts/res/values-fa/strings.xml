@@ -25,7 +25,7 @@
   <string name="kp_tp_off">پد لمسی خاموش</string>
   <string name="kp_brightness_manual">روشنایی <xliff:g id="brightness">%1$s</xliff:g></string>
   <string name="kp_brightness_auto">روشنایی خودکار</string>
-  <string name="kp_volume">بلندی صدا <xliff:g id="volume">%1$s</xliff:g></string>
+  <string name="kp_volume">میزان صدا <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">قطع صدا</string>
   <string name="kp_volume_mute_off">عدم قطع صدا</string>
   <string name="kp_media_play_pause">پخش/توقف رسانه</string>
