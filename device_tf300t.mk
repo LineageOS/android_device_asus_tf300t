@@ -80,6 +80,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.carrier=wifi-only \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=160 \
+    sys.io.scheduler=bfq \
     tf.enable=y \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15
