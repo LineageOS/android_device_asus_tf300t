@@ -32,7 +32,7 @@
   <string name="kp_media_previous">Phương tiện TRƯỚC ĐÓ</string>
   <string name="kp_media_next">Phương tiện TIẾP THEO</string>
   <string name="kp_screenshot">Chụp ảnh màn hình</string>
-  <string name="kp_explorer">Mở trình duyệt</string>
+  <string name="kp_explorer">Khởi động trình duyệt</string>
   <string name="kp_settings">Cài đặt khởi động</string>
   <string name="kp_caps_lock_on">Caps-Lock BẬT</string>
   <string name="kp_caps_lock_off">Caps-Lock TẮT</string>
