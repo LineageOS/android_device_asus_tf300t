@@ -24,16 +24,16 @@
   <string name="kp_tp_on">TouchPad ON</string>
   <string name="kp_tp_off">TouchPad OFF</string>
   <string name="kp_brightness_manual">Brilho <xliff:g id="brightness">%1$s</xliff:g></string>
-  <string name="kp_brightness_auto">Brilho automático</string>
+  <string name="kp_brightness_auto">Brilho AUTO</string>
   <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">Silêncio ON</string>
   <string name="kp_volume_mute_off">Silêncio OFF</string>
-  <string name="kp_media_play_pause">Media Reproduzir/Pausa</string>
-  <string name="kp_media_previous">Media Anterior</string>
-  <string name="kp_media_next">Media Seguinte</string>
-  <string name="kp_screenshot">Tirar captura de ecrã</string>
-  <string name="kp_explorer">Abrir navegador</string>
-  <string name="kp_settings">Definições de arranque</string>
+  <string name="kp_media_play_pause">Media PLAY/PAUSE</string>
+  <string name="kp_media_previous">Media ANTERIOR</string>
+  <string name="kp_media_next">Media SEGUINTE</string>
+  <string name="kp_screenshot">Realizar captura de ecrã</string>
+  <string name="kp_explorer">Abrir o navegador</string>
+  <string name="kp_settings">Abrir as definições</string>
   <string name="kp_caps_lock_on">Caps Lock ON</string>
   <string name="kp_caps_lock_off">Caps Lock OFF</string>
 </resources>
