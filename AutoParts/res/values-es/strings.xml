@@ -26,11 +26,14 @@
   <string name="kp_brightness_manual">Brillo <xliff:g id="brightness">%1$s</xliff:g></string>
   <string name="kp_brightness_auto">Brillo automático</string>
   <string name="kp_volume">Volumen <xliff:g id="volume">%1$s</xliff:g></string>
+  <string name="kp_volume_mute_on">Silencio activado</string>
   <string name="kp_volume_mute_off">Silencio desactivado</string>
   <string name="kp_media_play_pause">Media REPRODUCIR/DETENER</string>
+  <string name="kp_media_previous">Media ANTERIOR</string>
   <string name="kp_media_next">Media SIGUIENTE</string>
   <string name="kp_screenshot">Capturar pantalla</string>
   <string name="kp_explorer">Iniciar navegador</string>
+  <string name="kp_settings">Ajustes de inicio</string>
   <string name="kp_caps_lock_on">Bloqueo de mayúsculas activado</string>
   <string name="kp_caps_lock_off">Bloqueo de mayúsculas desactivado</string>
 </resources>
