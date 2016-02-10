@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">고급 설정</string>
-  <string name="kp_wifi_on">Wi-FI 켜기</string>
-  <string name="kp_wifi_off">Wi-FI 끄기</string>
+  <string name="kp_wifi_on">Wi-Fi 켜기</string>
+  <string name="kp_wifi_off">Wi-Fi 끄기</string>
   <string name="kp_bt_on">블루투스 켜기</string>
   <string name="kp_bt_off">블루투스 끄기</string>
   <string name="kp_tp_on">터치패드 켜기</string>
