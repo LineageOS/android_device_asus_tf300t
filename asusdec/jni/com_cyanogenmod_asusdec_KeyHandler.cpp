@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace asusdec {
 
 
 JNIEXPORT jboolean JNICALL asusdec_KeyHandler_nativeToggleTouchpad
-  (JNIEnv *env, jclass cls, jboolean status) {
+  (JNIEnv *, jclass, jboolean status) {
     ALOGD("Switching touchpad %d\n", status);
 
     int fd = open(ASUSDEC_DEV, O_RDONLY | O_NONBLOCK);

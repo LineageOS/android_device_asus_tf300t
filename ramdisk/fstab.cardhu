@@ -5,24 +5,14 @@
 
 # Init mount points
 /dev/block/mmcblk0p1	/system	ext4	ro	wait
-/dev/block/mmcblk0p2	/cache	f2fs	noatime,nosuid,nodev,nodiratime,discard,inline_xattr,inline_data,inline_dentry	wait,check
+/dev/block/mmcblk0p2	/cache	f2fs	noatime,nosuid,nodev,nodiratime,discard,inline_xattr,inline_data,inline_dentry	wait,check,formattable
 /dev/block/mmcblk0p2	/cache	ext4	noatime,nosuid,nodev,nomblk_io_submit,errors=panic	wait,check
-/dev/block/mmcblk0p8	/data	f2fs	noatime,nosuid,nodev,nodiratime,discard,inline_xattr,inline_data,inline_dentry	wait,check,encryptable=footer
-/dev/block/mmcblk0p8	/data	ext4	noatime,nosuid,nodev,nomblk_io_submit,errors=panic	wait,check,encryptable=footer
+/dev/block/mmcblk0p8	/data	f2fs	noatime,nosuid,nodev,nodiratime,discard,inline_xattr,inline_data,inline_dentry	wait,check,formattable,encryptable=footer,length=-16384
+/dev/block/mmcblk0p8	/data	ext4	noatime,nosuid,nodev,nomblk_io_submit,errors=panic	wait,check,encryptable=footer,length=-16384
 
 # Vold mount points
-/devices/platform/sdhci-tegra.0/mmc_host/mmc2 auto  auto defaults voldmanaged=sdcard1:auto
-
-/devices/platform/tegra-ehci.2/usb1/1-1/1-1.2 auto auto defaults voldmanaged=usbdisk0:auto
-/devices/platform/tegra-ehci.2/usb2/2-1/2-1.2 auto auto defaults voldmanaged=usbdisk0:auto
-
-/devices/platform/tegra-ehci.2/usb1/1-1/1-1.1 auto auto defaults voldmanaged=usbdisk1:auto
-/devices/platform/tegra-ehci.2/usb2/2-1/2-1.1 auto auto defaults voldmanaged=usbdisk1:auto
-/devices/platform/tegra-ehci.2/usb2/2-1/2-1:1 auto auto defaults voldmanaged=usbdisk1:auto
-/devices/platform/tegra-ehci.2/usb1/1-1/1-1:1 auto auto defaults voldmanaged=usbdisk1:auto
-
-/devices/platform/tegra-ehci.2/usb1/1-1/1-1.3 auto auto defaults voldmanaged=sdcard2:auto
-/devices/platform/tegra-ehci.2/usb2/2-1/2-1.3 auto auto defaults voldmanaged=sdcard2:auto
+/devices/platform/sdhci-tegra.0/mmc_host* auto  auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/platform/tegra-ehci.2/usb* auto auto defaults voldmanaged=usbdisk0:auto,encryptable=userdata
 
 # Recovery only mount points
 /dev/block/mmcblk1p1	/external_sd		auto defaults recoveryonly
