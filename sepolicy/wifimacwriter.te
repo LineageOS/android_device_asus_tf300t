@@ -1,0 +1,15 @@
+# wifimac writer  domain
+type wifimacwriter, domain;
+type wifimacwriter_exec, exec_type, file_type;
+
+init_daemon_domain(wifimacwriter)
+
+allow wifimacwriter self:capability dac_override;
+auditallow wifimacwriter self:capability dac_override;
+
+allow wifimacwriter self:capability {chown fowner fsetid};
+
+allow wifimacwriter wifi_data_file:file {getattr setattr};
+allow wifimacwriter property_socket:sock_file write;
+allow wifimacwriter init:unix_stream_socket connectto;
+allow wifimacwriter system_prop:property_service set;
