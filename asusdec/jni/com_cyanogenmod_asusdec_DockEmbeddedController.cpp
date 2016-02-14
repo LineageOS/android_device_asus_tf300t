@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ static int readGpio(const char* path, char* buf, size_t size)
 }
 
 JNIEXPORT jint JNICALL asusdec_DockEmbeddedController_nativeReadECWakeUp
-    (JNIEnv *env, jclass cls) {
+    (JNIEnv *, jclass) {
 
     const int SIZE = 16;
     char buf[SIZE];
@@ -76,7 +76,7 @@ JNIEXPORT jint JNICALL asusdec_DockEmbeddedController_nativeReadECWakeUp
 }
 
 JNIEXPORT jboolean JNICALL asusdec_DockEmbeddedController_nativeWriteECWakeUp
-    (JNIEnv *env, jclass cls, jboolean on) {
+    (JNIEnv *, jclass, jboolean on) {
 
     int fd = open(ASUSDEC_DEV, O_RDONLY | O_NONBLOCK);
     if (fd < 0) {

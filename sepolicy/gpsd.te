@@ -1,3 +1,2 @@
 allow gpsd self:process execmem;
-allow gpsd self:capability dac_override;
 allow gpsd system_app_data_file:file read;

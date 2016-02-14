@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ int register_asusdec_DockEmbeddedController(JNIEnv* env);
 
 using namespace asusdec;
 
-extern "C" jint JNI_OnLoad(JavaVM* vm, void* reserved)
+extern "C" jint JNI_OnLoad(JavaVM* vm, void*)
 {
     JNIEnv* env = NULL;
     jint result = -1;
