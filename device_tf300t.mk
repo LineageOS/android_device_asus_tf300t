@@ -1,4 +1,4 @@
-# Copyright (C) 2015 The Android Open Source Project
+# Copyright (C) 2016 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -57,7 +57,6 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # extra packages to build for this device
 PRODUCT_PACKAGES += \
-    AutoParts_tfp \
     audio.a2dp.default \
     audio.r_submix.default \
     blobpack_tfp \
@@ -66,6 +65,7 @@ PRODUCT_PACKAGES += \
     fsck.f2fs \
     libasusdec_jni \
     libaudioutils \
+    libcardhuu \
     librs_jni \
     mischelp \
     mkfs.f2fs \
@@ -73,10 +73,10 @@ PRODUCT_PACKAGES += \
     tinymix \
     wifimacwriter
 
+#    AutoParts_tfp \
+
 # properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
-    persist.sys.isUsbOtgEnabled=true \
-    persist.sys.usb.config=mtp \
     ro.carrier=wifi-only \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=160 \
@@ -106,32 +106,6 @@ PRODUCT_COPY_FILES += \
 # SELINUX Defines
 BOARD_SEPOLICY_DIRS := \
     device/asus/tf300t/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    property_contexts \
-    service_contexts \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    genfs_contexts \
-    gpsd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    lmkd.te \
-    mediaserver.te \
-    property.te \
-    recovery.te \
-    rild.te \
-    sensors_config.te \
-    surfaceflinger.te \
-    system_app.te \
-    system_server.te \
-    ueventd.te \
-    vold.te
 
 # wifi files
 PRODUCT_PACKAGES += \
