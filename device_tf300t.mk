@@ -57,21 +57,23 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # extra packages to build for this device
 PRODUCT_PACKAGES += \
-    AutoParts_tfp \
     audio.a2dp.default \
     audio.r_submix.default \
     blobpack_tfp \
     com.android.future.usb.accessory \
-    com.cyanogenmod.asusdec \
     fsck.f2fs \
-    libasusdec_jni \
     libaudioutils \
+    libcardhuu \
     librs_jni \
     mischelp \
     mkfs.f2fs \
     setup_fs \
     tinymix \
     wifimacwriter
+
+#    AutoParts_tfp \
+#    libasusdec_jni \
+#    com.cyanogenmod.asusdec \
 
 # properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -106,32 +108,6 @@ PRODUCT_COPY_FILES += \
 # SELINUX Defines
 BOARD_SEPOLICY_DIRS := \
     device/asus/tf300t/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    property_contexts \
-    service_contexts \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    genfs_contexts \
-    gpsd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    lmkd.te \
-    mediaserver.te \
-    property.te \
-    recovery.te \
-    rild.te \
-    sensors_config.te \
-    surfaceflinger.te \
-    system_app.te \
-    system_server.te \
-    ueventd.te \
-    vold.te
 
 # wifi files
 PRODUCT_PACKAGES += \

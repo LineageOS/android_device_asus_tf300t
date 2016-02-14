@@ -155,7 +155,4 @@
 
    <integer name="config_multiuserMaximumUsers">8</integer>
    <bool name="config_enableMultiUserUI">true</bool>
-
-   <string name="config_perf_profile_prop" translatable="false">sys.cpu.mode</string>
-   <string name="config_perf_profile_default_entry" translatable="false">2</string>
 </resources>
