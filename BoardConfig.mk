@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The Android Open-Source Project
+# Copyright (C) 2016 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,13 +23,10 @@ USE_LEGACY_AUDIO_POLICY := 1
 # Camera options
 USE_CAMERA_STUB := false
 
-# defines to support legacy blobs
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DADD_LEGACY_SET_POSITION_SYMBOL -DADD_LEGACY_MEMORY_DEALER_CONSTRUCTOR_SYMBOL -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
-
 # Cardhu HAL libraries
-BOARD_HAL_STATIC_LIBRARIES := \
-    libdumpstate.cardhu \
-    libhealthd.cardhu
+#BOARD_HAL_STATIC_LIBRARIES := \
+#    libdumpstate.cardhu \
+#    libhealthd.cardhu
 
 # inherit from the proprietary version
 -include vendor/asus/tf300t/BoardConfigVendor.mk
@@ -60,7 +57,6 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE :=
 
 # Video settings
-BOARD_EGL_CFG := device/asus/tf300t/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_HAVE_PIXEL_FORMAT_INFO := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true

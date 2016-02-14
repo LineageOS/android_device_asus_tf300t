@@ -6,3 +6,5 @@ allow mediaserver sysfs_devices_tegradc:lnk_file read;
 allow mediaserver system_server:unix_stream_socket rw_stream_socket_perms;
 allow mediaserver camera_prop:property_service set;
 allow mediaserver tegra_hwdec_prop:property_service set;
+allow mediaserver system_file:file execmod;
+allow mediaserver sensorservice_service:service_manager find;
