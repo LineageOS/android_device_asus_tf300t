@@ -28,9 +28,9 @@
   <string name="kp_volume">Lautstärke <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">Lautlos AN</string>
   <string name="kp_volume_mute_off">Lautlos AUS</string>
-  <string name="kp_media_play_pause">Medien: Play/Pause</string>
-  <string name="kp_media_previous">Medien: Vorheriger</string>
-  <string name="kp_media_next">Medien: Nächster</string>
+  <string name="kp_media_play_pause">Medien: PLAY/PAUSE</string>
+  <string name="kp_media_previous">Medien: ZURÜCK</string>
+  <string name="kp_media_next">Medien: WEITER</string>
   <string name="kp_screenshot">Bildschirmfoto aufnehmen</string>
   <string name="kp_explorer">Browser starten</string>
   <string name="kp_settings">Einstellungen öffnen</string>
