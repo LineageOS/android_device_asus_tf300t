@@ -23,8 +23,8 @@
   <string name="kp_bt_off">Bluetooth Inactiu</string>
   <string name="kp_tp_on">Ratolí tàctil Actiu</string>
   <string name="kp_tp_off">Ratolí tàctil Inactiu</string>
-  <string name="kp_brightness_manual">Brillantor <xliff:g id="brightness">%1$s</xliff:g></string>
-  <string name="kp_brightness_auto">Brillantor AUTO</string>
+  <string name="kp_brightness_manual">Lluminositat <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Lluminositat AUTO</string>
   <string name="kp_volume">Volum <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">Silenci Actiu</string>
   <string name="kp_volume_mute_off">Silenci Inactiu</string>
@@ -34,6 +34,6 @@
   <string name="kp_screenshot">Fes una captura de pantalla</string>
   <string name="kp_explorer">Obre el navegador</string>
   <string name="kp_settings">Obre la configuració</string>
-  <string name="kp_caps_lock_on">Bloq Maj-Actiu</string>
+  <string name="kp_caps_lock_on">Bloq-Maj Actiu</string>
   <string name="kp_caps_lock_off">Bloq-Maj Inactiu</string>
 </resources>

@@ -17,7 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ಸುಧಾರಿತ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
-  <string name="kp_wifi_on">ವೈ-ಫೈ ಆನ್</string>
   <string name="kp_wifi_off">ವೈ-ಫೈ ಆಫ್</string>
   <string name="kp_bt_on">ಬ್ಲೂಟೂತ್ ಆನ್</string>
   <string name="kp_bt_off">ಬ್ಲೂಟೂತ್ ಆಫ್</string>
