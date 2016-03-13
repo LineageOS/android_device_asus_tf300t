@@ -1,2 +1,4 @@
 type camera_prop, property_type;
 type tegra_hwdec_prop, property_type;
+type tegra_model_prop, property_type;
+type tegra_wifi_prop, property_type;

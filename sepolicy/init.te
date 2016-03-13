@@ -10,3 +10,8 @@ allow init tmpfs:lnk_file create;
 
 allow init sysfs_devices_tegradc:lnk_file read;
 allow init sysfs_devices_tegradc:file getattr;
+
+# accept shim libs
+allow init surfaceflinger:process noatsecure;
+allow init mediaserver:process noatsecure;
+allow init zygote:process noatsecure;

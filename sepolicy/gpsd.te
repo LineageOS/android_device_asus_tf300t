@@ -1,2 +1,0 @@
-allow gpsd self:process execmem;
-allow gpsd system_app_data_file:file read;

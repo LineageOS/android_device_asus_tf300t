@@ -2,3 +2,7 @@ camera.start.preview		u:object_r:camera_prop:s0
 media.tegra.hw.ac3dec           u:object_r:tegra_hwdec_prop:s0
 media.tegra.hw.dtsdec           u:object_r:tegra_hwdec_prop:s0
 
+epad.model_id                   u:object_r:tegra_model_prop:s0
+
+wifi.module.type                u:object_r:tegra_wifi_prop:s0
+wlan.driver.p2p                 u:object_r:tegra_wifi_prop:s0

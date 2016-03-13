@@ -21,3 +21,4 @@ allow system_server cache_file:file execute;
 # for /system/lib/libami_sensor_mw.so text relocations
 allow system_server system_file:file execmod;
 auditallow system_server system_file:file execmod;
+allow system_server glgps:unix_stream_socket connectto;

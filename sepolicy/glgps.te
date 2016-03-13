@@ -1,0 +1,14 @@
+type glgps, domain;
+type glgps_exec, exec_type, file_type;
+
+init_daemon_domain(glgps)
+
+allow glgps glgps_exec:file { execute_no_trans };
+
+allow glgps gps_data_file:fifo_file { getattr unlink create read open };
+allow glgps gps_data_file:dir { search write remove_name add_name };
+allow glgps gps_data_file:file { create write getattr read open };
+allow glgps glgps:unix_stream_socket connectto;
+allow glgps sysfs:file write;
+allow glgps gps_device:chr_file {read write open ioctl};
+

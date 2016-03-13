@@ -4,7 +4,7 @@ import init.cardhu.cpu.rc
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     export LD_SHIM_LIBS /system/lib/hw/hwcomposer.tegra.so|libcardhuu.so:/system/lib/hw/camera.tegra.so|libcardhuu.so:/system/lib/hw/audio_policy.tegra.so|libcardhuu.so:/system/lib/libsensors.mpl3050.so|libcardhuu.so:/system/lib/hw/sensors.cardhu.so|libcardhuu.so:/system/lib/libnvcap_video.so|libcardhuu.so:/system/lib/libnvwinsys.so|libcardhuu.so
-    
+
 on init
     export LD_SHIM_LIBS /system/lib/hw/hwcomposer.tegra.so|libcardhuu.so:/system/lib/hw/camera.tegra.so|libcardhuu.so:/system/lib/hw/audio_policy.tegra.so|libcardhuu.so:/system/lib/libsensors.mpl3050.so|libcardhuu.so:/system/lib/hw/sensors.cardhu.so|libcardhuu.so:/system/lib/libnvcap_video.so|libcardhuu.so:/system/lib/libnvwinsys.so|libcardhuu.so
 
@@ -83,6 +83,9 @@ on boot
     chown system system /sys/class/graphics/fb0/device/smartdimmer/enable
     chown system system /sys/class/graphics/fb0/device/smartdimmer/aggressiveness
     chown system system /sys/class/graphics/fb0/device/smartdimmer/phase_in_adjustments
+    chmod 0664 /sys/class/graphics/fb0/device/smartdimmer/enable
+    restorecon /sys/devices/tegradc.0/smartdimmer/aggressiveness
+    restorecon /sys/devices/tegradc.0/smartdimmer/enable
 
 # smartdimmer parameters
     write /sys/class/graphics/fb0/device/smartdimmer/enable 0
@@ -126,7 +129,6 @@ on boot
     #write /sys/module/tegra3_emc/parameters/emc_enable 0
     #write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1000000
     write /sys/devices/system/cpu/cpufreq/interactive/boost_factor 2
-    write /sys/devices/system/cpu/cpufreq/interactive/input_boost 1
     write /sys/devices/system/cpu/cpufreq/interactive/sustain_load 80
     write /sys/module/cpu_tegra3/parameters/auto_hotplug 1
     #write /sys/module/cpuidle_t3/parameters/lp2_0_in_idle 0
@@ -149,24 +151,18 @@ on boot
 
     restorecon_recursive /sys/devices/system/cpu/cpufreq/interactive
     restorecon /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    restorecon /sys/devices/tegradc.0/smartdimmer/aggressiveness
-    restorecon /sys/devices/tegradc.0/smartdimmer/enable
-
-# Set battery poll interval
-    write /sys/module/bq27x00_battery/parameters/poll_interval 30
 
 #Fuse
     chmod 444 /sys/firmware/fuse/odm_production_mode
 
 # Default Read Ahead value for sdcards
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
-    write /sys/block/mmcblk1/queue/read_ahead_kb 2048
 
 # GPS
     mkdir /data/gps
-    chown system system /data/gps
-    chmod 770 /data/gps
-    chown system system /sys/module/cpu_tegra/parameters/gps_start
+    chown gps system /data/gps
+    chmod 1770 /data/gps
+    chown gps system /sys/module/cpu_tegra/parameters/gps_start
     chmod 600 /sys/module/cpu_tegra/parameters/gps_start
 
 # Wiimote connect status
@@ -177,8 +173,13 @@ on boot
     write /sys/class/gpio/export 162
     write /sys/class/gpio/gpio162/value 0
     write /sys/class/gpio/gpio162/direction out
-    chown root system /sys/class/gpio/gpio162/value
+    chown gps system /sys/class/gpio/gpio162/value
     chmod 0664 /sys/class/gpio/gpio162/value
+    chown gps system /dev/ttyHS1
+    chmod 0660 /dev/ttyHS1
+    restorecon /sys/class/gpio/export
+    restorecon /sys/class/gpio/gpio162/value
+    restorecon /sys/class/gpio/gpio162/direction
 
 # ril
     mkdir /data/modem 0770 radio system
@@ -187,10 +188,6 @@ on boot
 # Touch
     chown system system /proc/ektf_dbg
     chmod 0660 /proc/ektf_dbg
-
-# Hardware tunables
-    chown root system /sys/class/graphics/fb0/device/smartdimmer/enable
-    chmod 0664 /sys/class/graphics/fb0/device/smartdimmer/enable
 
 # BB mapping symbolic name to the logging ttyACM port
     symlink /dev/ttyACM2 /dev/log_modem
@@ -259,16 +256,9 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     disabled
     oneshot
 
-#Sensor: load calibration files.
 service sensors-config /system/bin/sensors-config
     class main
     user root
-    oneshot
-#Sensor load calibration files end
-
-# bdaddrwriter - Write ASUS BD_ADDR to /data/misc/bluetooth
-service bdaddrwriter /system/bin/bdaddrwriter
-    class main
     oneshot
 
 # bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys
@@ -283,10 +273,11 @@ service bugreport /system/bin/dumpstate -d -p -B \
 # Start GPS daemon
 on boot
   service gps-daemon /system/bin/glgps -c /system/etc/gps/gpsconfig.xml
-  user root
-  socket gps seqpacket 0666 root root
-  group root
-  class late_start
+  class main
+  socket gps seqpacket 0666 gps system
+  user gps
+  group system inet sdcard_rw gps
+  seclabel u:r:glgps:s0
 
 # Mount usb drives as /usbdrive. Generally usb drives are formatted with FAT
 # filesystem, so we support FAT as of now.
@@ -306,8 +297,3 @@ on property:sys.shutdown.requested=1recovery
 
 # Prepare TF service
 import init.tf.rc
-
-#Raydium touch setting
-service rm_ts_service    /system/bin/rm_ts_server
-    class main
-

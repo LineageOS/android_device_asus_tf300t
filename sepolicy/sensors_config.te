@@ -19,15 +19,5 @@ allow sensors_config { sdcard_external block_device }:dir search;
 # Read from the mounted PER partition
 allow sensors_config sdcard_external:file r_file_perms;
 
-# Need to chmod and chown files (/data/lightsensor, /data/sensors)
-allow sensors_config self:capability { chown fowner };
+allow sensors_config self:capability { chown fowner fsetid sys_admin dac_override};
 
-# Checked as a side effect on the chmod (don't allow)
-dontaudit sensors_config self:capability { fsetid };
-
-# Needed for mount/umount
-allow sensors_config self:capability sys_admin;
-
-# Tries to delete /data/calibration (don't allow)
-dontaudit sensors_config system_data_file:dir remove_name;
-dontaudit sensors_config self:capability dac_override;

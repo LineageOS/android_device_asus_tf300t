@@ -57,6 +57,7 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # extra packages to build for this device
 PRODUCT_PACKAGES += \
+    AutoParts_tfp \
     audio.a2dp.default \
     audio.r_submix.default \
     blobpack_tfp \
@@ -73,7 +74,6 @@ PRODUCT_PACKAGES += \
     tinymix \
     wifimacwriter
 
-#    AutoParts_tfp \
 
 # properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
