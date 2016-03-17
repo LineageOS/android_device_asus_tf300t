@@ -25,15 +25,15 @@
   <string name="kp_tp_off">משטח מגע כבוי</string>
   <string name="kp_brightness_manual">בהירות <xliff:g id="brightness">%1$s</xliff:g></string>
   <string name="kp_brightness_auto">בהירות אוטומטית</string>
-  <string name="kp_volume">עוצמת שמע <xliff:g id="volume">%1$s</xliff:g></string>
-  <string name="kp_volume_mute_on">השתקה פעילה</string>
+  <string name="kp_volume">עוצמת קול <xliff:g id="volume">%1$s</xliff:g></string>
+  <string name="kp_volume_mute_on">השתקה מופעלת</string>
   <string name="kp_volume_mute_off">השתקה כבויה</string>
-  <string name="kp_media_play_pause">מדיה - נגן/השהה</string>
+  <string name="kp_media_play_pause">מדיה - הפעל/השהה</string>
   <string name="kp_media_previous">מדיה - הקודם</string>
   <string name="kp_media_next">מדיה - הבא</string>
-  <string name="kp_screenshot">לקיחת צילום מסך</string>
-  <string name="kp_explorer">פתח דפדפן</string>
-  <string name="kp_settings">פתח הגדרות</string>
+  <string name="kp_screenshot">צלם מסך</string>
+  <string name="kp_explorer">הפעל דפדפן</string>
+  <string name="kp_settings">הפעל הגדרות</string>
   <string name="kp_caps_lock_on">Caps-Lock פעיל</string>
   <string name="kp_caps_lock_off">Caps-Lock כבוי</string>
 </resources>

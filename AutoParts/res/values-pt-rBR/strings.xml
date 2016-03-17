@@ -28,12 +28,12 @@
   <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">Ligar Mudo</string>
   <string name="kp_volume_mute_off">Desligar Mudo</string>
-  <string name="kp_media_play_pause">REPRODUZIR/PARAR Mídia</string>
-  <string name="kp_media_previous">VOLTAR Mídia</string>
-  <string name="kp_media_next">PRÓXIMA Mídia</string>
+  <string name="kp_media_play_pause">Tocar/Parar Mídia</string>
+  <string name="kp_media_previous">Voltar Mídia</string>
+  <string name="kp_media_next">Avançar Mídia</string>
   <string name="kp_screenshot">Capturar tela</string>
   <string name="kp_explorer">Iniciar navegador</string>
-  <string name="kp_settings">Definições do laucher</string>
+  <string name="kp_settings">Iniciar configurações</string>
   <string name="kp_caps_lock_on">Ligar CapsLock</string>
   <string name="kp_caps_lock_off">Desligar CapsLock</string>
 </resources>

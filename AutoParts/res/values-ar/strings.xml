@@ -19,14 +19,14 @@
   <string name="app_name">الإعدادات المتقدمة</string>
   <string name="kp_wifi_on">تشغيل واي فاي</string>
   <string name="kp_wifi_off">إيقاف واي فاي</string>
-  <string name="kp_bt_on">البلوتوث يعمل</string>
+  <string name="kp_bt_on">تشغيل البلوتوث</string>
   <string name="kp_bt_off">إيقاف البلوتوث</string>
-  <string name="kp_tp_on">تشغيل شاشة تعمل باللمس</string>
+  <string name="kp_tp_on">تشغيل لوحة اللمس</string>
   <string name="kp_tp_off">إيقاف لوحة اللمس</string>
   <string name="kp_brightness_manual">سطوع <xliff:g id="brightness">%1$s</xliff:g></string>
   <string name="kp_brightness_auto">السطوع التلقائي</string>
   <string name="kp_volume">الصوت<xliff:g id="volume">%1$s</xliff:g></string>
-  <string name="kp_volume_mute_on">تسغيل كتم الصوت</string>
+  <string name="kp_volume_mute_on">تشغيل كتم الصوت</string>
   <string name="kp_volume_mute_off">إيقاف كتم الصوت</string>
   <string name="kp_media_play_pause">تشغيل/ إيقاف مؤقت للوسائط</string>
   <string name="kp_media_previous">الوسائط السابقة</string>
