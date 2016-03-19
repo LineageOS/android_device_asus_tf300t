@@ -35,8 +35,6 @@ etc/firmware/nvavp_os_eff00000.bin
 etc/firmware/nvavp_vid_ucode_alt.bin
 etc/firmware/nvavp_vid_ucode.bin
 
-etc/wifi/wpa_supplicant.conf
-
 lib/egl/libEGL_tegra.so
 lib/egl/libEGL_tegra_impl.so
 lib/egl/libGLES_android.so
