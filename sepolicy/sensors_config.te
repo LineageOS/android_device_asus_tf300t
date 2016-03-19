@@ -1,11 +1,14 @@
-##########
 # sensors_config: load calibration files.
-##########
+
 type sensors_config, domain;
 type sensors_config_exec, exec_type, file_type;
 type sensors_data_file, file_type, data_file_type;
+
 init_daemon_domain(sensors_config)
+
 file_type_auto_trans(sensors_config, system_data_file, sensors_data_file)
+
+allow sensors_config self:capability {chown fowner fsetid sys_admin dac_override};
 
 # Execute toolbox commands
 allow sensors_config shell_exec:file rx_file_perms;
@@ -13,11 +16,11 @@ allow sensors_config system_file:file execute_no_trans;
 
 # Mount /dev/block/platform/sdhci-tegra.3/by-name/PER
 allow sensors_config sensors_data_file:dir mounton;
-allow sensors_config sdcard_external:filesystem { mount unmount };
-allow sensors_config { sdcard_external block_device }:dir search;
+
+allow sensors_config sdcard_external:filesystem {mount unmount};
+allow sensors_config {sdcard_external block_device}:dir search;
 
 # Read from the mounted PER partition
 allow sensors_config sdcard_external:file r_file_perms;
 
-allow sensors_config self:capability { chown fowner fsetid sys_admin dac_override};
 

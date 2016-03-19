@@ -1,18 +1,21 @@
-# wifimac writer  domain
+# wifimac writer domain
 type wifimacwriter, domain;
 type wifimacwriter_exec, exec_type, file_type;
+
+init_daemon_domain(wifimacwriter)
+
+file_type_auto_trans(wifimacwriter, system_data_file, wifi_data_file)
 
 set_prop(wifimacwriter, tegra_model_prop)
 set_prop(wifimacwriter, tegra_wifi_prop)
 
-init_daemon_domain(wifimacwriter)
+allow wifimacwriter self:capability {dac_override sys_admin chown fowner fsetid};
 
-allow wifimacwriter self:capability dac_override;
-auditallow wifimacwriter self:capability dac_override;
+allow wifimacwriter wifi_data_file:dir mounton;
 
-allow wifimacwriter self:capability {chown fowner fsetid};
-
-allow wifimacwriter wifi_data_file:file {getattr setattr};
-allow wifimacwriter wifi_data_file:dir {search};
 allow wifimacwriter property_socket:sock_file write;
 allow wifimacwriter init:unix_stream_socket connectto;
+
+allow wifimacwriter vfat:filesystem {mount unmount};
+allow wifimacwriter vfat:file {read open getattr};
+allow wifimacwriter vfat:dir {read open getattr search};
