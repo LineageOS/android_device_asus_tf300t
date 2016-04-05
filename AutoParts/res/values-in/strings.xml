@@ -32,4 +32,8 @@
   <string name="kp_media_previous">Media SEBELUMNYA</string>
   <string name="kp_media_next">Media BERIKUTNYA</string>
   <string name="kp_screenshot">Ambil cuplikan layar</string>
+  <string name="kp_explorer">Buka peramban</string>
+  <string name="kp_settings">Buka pengaturan</string>
+  <string name="kp_caps_lock_on">Kunci kapital AKTIF</string>
+  <string name="kp_caps_lock_off">Kunci kapital NONAKTIF</string>
 </resources>
