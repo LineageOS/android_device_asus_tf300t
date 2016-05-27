@@ -23,9 +23,9 @@
   <string name="kp_bt_off">బ్లూటూత్ ఆఫ్</string>
   <string name="kp_tp_on">టచ్పాడ్ ఆన్</string>
   <string name="kp_tp_off">టచ్పాడ్ ఆఫ్</string>
-  <string name="kp_brightness_manual">ప్రకాశం <xliff:g id="ప్రకాశం">%1$s</xliff:g><xliff:g id="ప్రకాశం"><xliff:g id="ప్రకాశం"></string>
+  <string name="kp_brightness_manual">ప్రకాశం <xliff:g id="brightness">%1$s</xliff:g></string>
   <string name="kp_brightness_auto">స్వీయ ప్రకాశత్వం</string>
-  <string name="kp_volume">శబ్దం <xliff:g id="శబ్దం">%1$s</xliff:g></string>
+  <string name="kp_volume">శబ్దం <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">నిశ్శబ్ధత ఆన్</string>
   <string name="kp_volume_mute_off">నిశ్శబ్ధత ఆఫ్</string>
   <string name="kp_media_play_pause">పాట ప్రారంభం/ఆపు</string>
