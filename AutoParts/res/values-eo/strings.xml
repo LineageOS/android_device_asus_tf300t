@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Altnivelaj agordoj</string>
   <string name="kp_wifi_on">Vifio aktiva</string>
   <string name="kp_wifi_off">Vifio malaktiva</string>
   <string name="kp_bt_on">Bludento aktiva</string>
