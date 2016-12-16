@@ -26,14 +26,14 @@
   <string name="kp_brightness_manual">Kecerahan <xliff:g id="brightness">%1$s</xliff:g></string>
   <string name="kp_brightness_auto">Kecerahan AUTO</string>
   <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
-  <string name="kp_volume_mute_on">Bungkam HIDUP</string>
-  <string name="kp_volume_mute_off">Bungkam MATI</string>
+  <string name="kp_volume_mute_on">Diam HIDUP</string>
+  <string name="kp_volume_mute_off">Diam MATI</string>
   <string name="kp_media_play_pause">Media PUTAR/JEDA</string>
   <string name="kp_media_previous">Media SEBELUMNYA</string>
   <string name="kp_media_next">Media BERIKUTNYA</string>
-  <string name="kp_screenshot">Ambil cuplikan layar</string>
-  <string name="kp_explorer">Buka peramban</string>
-  <string name="kp_settings">Buka pengaturan</string>
+  <string name="kp_screenshot">Ambil tangkapan layar</string>
+  <string name="kp_explorer">Luncurkan peramban</string>
+  <string name="kp_settings">Luncurkan pengaturan</string>
   <string name="kp_caps_lock_on">Kunci kapital AKTIF</string>
   <string name="kp_caps_lock_off">Kunci kapital NONAKTIF</string>
 </resources>
