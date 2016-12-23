@@ -31,7 +31,7 @@
   <string name="kp_media_play_pause">媒體播放/暫停</string>
   <string name="kp_media_previous">上一媒體</string>
   <string name="kp_media_next">下一媒體</string>
-  <string name="kp_screenshot">螢幕擷取</string>
+  <string name="kp_screenshot">螢幕截圖</string>
   <string name="kp_explorer">啟動瀏覽器</string>
   <string name="kp_settings">啟動設定</string>
   <string name="kp_caps_lock_on">開啟大寫鎖定</string>
