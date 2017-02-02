@@ -19,8 +19,8 @@
   <string name="app_name">Разширени настройки</string>
   <string name="kp_wifi_on">Wi-Fi включен</string>
   <string name="kp_wifi_off">Wi-Fi изключен</string>
-  <string name="kp_bt_on">Bluetooth включен</string>
-  <string name="kp_bt_off">Bluetooth изключен</string>
+  <string name="kp_bt_on">Блутуут включен</string>
+  <string name="kp_bt_off">Блутуут изключен</string>
   <string name="kp_tp_on">Тъчпад включен</string>
   <string name="kp_tp_off">Тъчпад изключен</string>
   <string name="kp_brightness_manual">Яркост <xliff:g id="brightness">%1$s </xliff:g></string>
