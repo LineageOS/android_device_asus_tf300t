@@ -15,4 +15,25 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Advanced settings</string>
+  <string name="kp_wifi_on">Wi-Fi ON</string>
+  <string name="kp_wifi_off">Wi-Fi OFF</string>
+  <string name="kp_bt_on">Bluetooth ON</string>
+  <string name="kp_bt_off">Bluetooth OFF</string>
+  <string name="kp_tp_on">TouchPad ON</string>
+  <string name="kp_tp_off">TouchPad OFF</string>
+  <string name="kp_brightness_manual">Brightness <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Brightness AUTO</string>
+  <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
+  <string name="kp_volume_mute_on">Mute ON</string>
+  <string name="kp_volume_mute_off">Mute OFF</string>
+  <string name="kp_media_play_pause">Media PLAY/PAUSE</string>
+  <string name="kp_media_previous">Media PREVIOUS</string>
+  <string name="kp_media_next">Media NEXT</string>
+  <string name="kp_screenshot">Take screenshot</string>
+  <string name="kp_explorer">Launch browser</string>
+  <string name="kp_settings">Launch settings</string>
+  <string name="kp_caps_lock_on">Caps-Lock ON</string>
+  <string name="kp_caps_lock_off">Caps-Lock OFF</string>
+</resources>
