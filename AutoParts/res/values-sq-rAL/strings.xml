@@ -15,4 +15,25 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Parametra të përparuar</string>
+  <string name="kp_wifi_on">Wi-Fi AKTIV</string>
+  <string name="kp_wifi_off">Wi-Fi INAKTIV</string>
+  <string name="kp_bt_on">Bluetooth AKTIV</string>
+  <string name="kp_bt_off">Bluetooth INAKTIV</string>
+  <string name="kp_tp_on">TouchPad AKTIV</string>
+  <string name="kp_tp_off">TouchPad INAKTIV</string>
+  <string name="kp_brightness_manual">Ndriçimi <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Ndriçimi AUTOMATIK</string>
+  <string name="kp_volume">Volumi <xliff:g id="volume">%1$s</xliff:g></string>
+  <string name="kp_volume_mute_on">Pa zë AKTIV</string>
+  <string name="kp_volume_mute_off">Pa zë INAKTIV</string>
+  <string name="kp_media_play_pause">Media NIS/NDALO</string>
+  <string name="kp_media_previous">Media E MËPARSHME</string>
+  <string name="kp_media_next">Media E RADHËS</string>
+  <string name="kp_screenshot">Kap foto të ekranit</string>
+  <string name="kp_explorer">Hap lundruesin</string>
+  <string name="kp_settings">Hap parametrat</string>
+  <string name="kp_caps_lock_on">Caps-Lock AKTIV</string>
+  <string name="kp_caps_lock_off">Caps-Lock INAKTIV</string>
+</resources>

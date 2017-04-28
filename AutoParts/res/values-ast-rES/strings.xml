@@ -23,8 +23,8 @@
   <string name="kp_bt_off">Bluetooth desactiváu</string>
   <string name="kp_tp_on">Mur táctil activáu</string>
   <string name="kp_tp_off">Mur táctil desactiváu</string>
-  <string name="kp_brightness_manual">Brillu <xliff:g id="brightness">%1$s</xliff:g></string>
-  <string name="kp_brightness_auto">Brillu automáticu</string>
+  <string name="kp_brightness_manual">Brilléu <xliff:g id="brightness">%1$s</xliff:g></string>
+  <string name="kp_brightness_auto">Brilléu AUTO</string>
   <string name="kp_volume">Volume <xliff:g id="volume">%1$s</xliff:g></string>
   <string name="kp_volume_mute_on">Silenciu activáu</string>
   <string name="kp_volume_mute_off">Silenciu desactiváu</string>
@@ -32,8 +32,8 @@
   <string name="kp_media_previous">Media ANTERIOR</string>
   <string name="kp_media_next">Media SIGUIENTE</string>
   <string name="kp_screenshot">Capturar pantalla</string>
-  <string name="kp_explorer">Abrir restolador</string>
-  <string name="kp_settings">Abrir axustes</string>
+  <string name="kp_explorer">Llanzar restolador</string>
+  <string name="kp_settings">Llanzar axustes</string>
   <string name="kp_caps_lock_on">Mayúscules activáu</string>
   <string name="kp_caps_lock_off">Mayúscules desactiváu</string>
 </resources>
